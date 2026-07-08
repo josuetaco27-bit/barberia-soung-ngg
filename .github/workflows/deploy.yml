@@ -20,4 +20,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Compilar
+    - name: Compilar la Aplicación y Ejecutar Pruebas
+      run: |
+        echo "Iniciando compilación automática del Backend..."
+        javac -d bin src/com/barberia/model/Reserva.java src/com/barberia/controller/GestorReservas.java src/com/barberia/test/GestorReservasTest.java
+        echo "Compilación exitosa. Ejecutando tests del sistema..."
+        java -cp bin com.barberia.test.GestorReservasTest
