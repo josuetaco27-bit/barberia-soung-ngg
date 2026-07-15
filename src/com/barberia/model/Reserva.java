@@ -27,9 +27,19 @@ public class Reserva {
         return this.fechaHora;
     }
     // Agrega esto dentro de Reserva.java para solucionar el error:
+    // 1. Declarar la variable arriba:
+    private String barbero;
+
+// 2. Modificar el constructor que creamos en el paso anterior para que la guarde:
+    public Reserva(String cliente, String barbero, String fechaHora) {
+        this.cliente = cliente;
+        this.barbero = barbero;
+        this.fechaHora = fechaHora;
+    }
+
+// 3. Crear el método getBarbero():
     public String getBarbero() {
-    // Si tu variable interna se llama de otra forma, reemplaza "this.barbero" por esa variable
-    return this.barbero; 
+        return this.barbero;
     }
     // ... el resto de tus métodos getters y setters
 } // <-- Esta es la última llave del archivo. El código va antes de esta llave.
