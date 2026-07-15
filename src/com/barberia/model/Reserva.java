@@ -1,23 +1,31 @@
 package com.barberia.model;
 
 public class Reserva {
-    private String id;
+    // 1. Atributos/Variables (Arriba)
     private String cliente;
-    private String barbero;
-    private String fecha; 
-    private int hora;     
-    private String servicio;
+    private String fechaHora;
+    // ... otros atributos
 
-    public Reserva(String id, String cliente, String barbero, String fecha, int hora, String servicio) {
-        this.id = id;
-        this.cliente = cliente;
-        this.barbero = barbero;
-        this.fecha = fecha;
-        this.hora = hora;
-        this.servicio = servicio;
+    // 2. Constructor original (El de 6 parámetros que ya tienes)
+    public Reserva(String param1, String param2, String param3, String param4, int param5, String param6) {
+        // ... tu código actual
     }
 
-    public String getBarbero() { return barbero; }
-    public String getFecha() { return fecha; }
-    public int getHora() { return hora; }
-}
+    // 3. NUEVO CONSTRUCTOR (Agrégalo aquí, antes de los Getters y Setters)
+    public Reserva(String cliente, String fechaHora, String servicio) {
+        this.cliente = cliente;
+        this.fechaHora = fechaHora;
+        // Inicializa lo que necesites
+    }
+
+    // 4. Getters y Setters (Asegúrate de que existan estos dos)
+    public String getCliente() {
+        return this.cliente;
+    }
+
+    public String getFechaHora() {
+        return this.fechaHora;
+    }
+
+    // ... el resto de tus métodos getters y setters
+} // <-- Esta es la última llave del archivo. El código va antes de esta llave.
