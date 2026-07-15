@@ -26,6 +26,10 @@ public class Reserva {
     public String getFechaHora() {
         return this.fechaHora;
     }
-
+    // Agrega esto dentro de Reserva.java para solucionar el error:
+    public String getBarbero() {
+    // Si tu variable interna se llama de otra forma, reemplaza "this.barbero" por esa variable
+    return this.barbero; 
+    }
     // ... el resto de tus métodos getters y setters
 } // <-- Esta es la última llave del archivo. El código va antes de esta llave.
