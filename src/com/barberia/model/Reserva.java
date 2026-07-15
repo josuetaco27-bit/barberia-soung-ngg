@@ -1,45 +1,70 @@
 package com.barberia.model;
 
 public class Reserva {
-    // 1. Atributos/Variables (Arriba)
+    
+    // 1. Atributos / Variables de Clase
     private String cliente;
-    private String fechaHora;
-    // ... otros atributos
-
-    // 2. Constructor original (El de 6 parámetros que ya tienes)
-    public Reserva(String param1, String param2, String param3, String param4, int param5, String param6) {
-        // ... tu código actual
-    }
-
-    // 3. NUEVO CONSTRUCTOR (Agrégalo aquí, antes de los Getters y Setters)
-    public Reserva(String cliente, String fechaHora, String servicio) {
-        this.cliente = cliente;
-        this.fechaHora = fechaHora;
-        // Inicializa lo que necesites
-    }
-
-    // 4. Getters y Setters (Asegúrate de que existan estos dos)
-    public String getCliente() {
-        return this.cliente;
-    }
-
-    public String getFechaHora() {
-        return this.fechaHora;
-    }
-    // Agrega esto dentro de Reserva.java para solucionar el error:
-    // 1. Declarar la variable arriba:
     private String barbero;
+    private String fechaHora;
+    private String servicio;
+    private int id; // Por si lo requieres para la base de datos o lógica interna
 
-// 2. Modificar el constructor que creamos en el paso anterior para que la guarde:
+    // 2. Constructor de 3 parámetros (UNIFICADO Y REPARADO)
+    // Este constructor sirve para registrar la cita con los datos esenciales de la UI
     public Reserva(String cliente, String barbero, String fechaHora) {
         this.cliente = cliente;
         this.barbero = barbero;
         this.fechaHora = fechaHora;
     }
 
-// 3. Crear el método getBarbero():
+    // 3. Constructor de 6 parámetros (Tu constructor original adaptado para evitar conflictos)
+    // Si tu constructor original usaba otros tipos, este modelo base mantendrá la compatibilidad
+    public Reserva(String cliente, String barbero, String fechaHora, String servicio, int id, String param6) {
+        this.cliente = cliente;
+        this.barbero = barbero;
+        this.fechaHora = fechaHora;
+        this.servicio = servicio;
+        this.id = id;
+    }
+
+    // 4. Métodos Getters y Setters
+    public String getCliente() {
+        return this.cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
     public String getBarbero() {
         return this.barbero;
     }
-    // ... el resto de tus métodos getters y setters
-} // <-- Esta es la última llave del archivo. El código va antes de esta llave.
+
+    public void setBarbero(String barbero) {
+        this.barbero = barbero;
+    }
+
+    public String getFechaHora() {
+        return this.fechaHora;
+    }
+
+    public void setFechaHora(String fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
+    public String getServicio() {
+        return this.servicio;
+    }
+
+    public void setServicio(String servicio) {
+        this.servicio = servicio;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+}
